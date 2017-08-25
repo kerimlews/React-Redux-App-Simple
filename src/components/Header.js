@@ -38,7 +38,7 @@ export class Header extends React.Component {
                 </nav>
                 <hr /> 
                 <div> 
-                    <Route path="/" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path="/images" component={Images}/>
                     <Route path="/login" component={Login}/>
                 </div>

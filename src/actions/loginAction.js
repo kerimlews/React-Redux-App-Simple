@@ -15,11 +15,11 @@ export function login(data){
           $.ajax(settings).done(function (response) {
             console.log(response);
           });*/
-        axios.post('www.localhost:8080/oauth/token?grant_type=password&username='+data.username+'&password='+data.password,data,
+        axios.post('www.localhost:8080/oauth/token?grant_type=password&username='+data.username+'&password='+data.password,
+        {'username':'kerim','password':'lews'},
         {headers:{
             "authorization": "Basic a2VyaW06bGV3cw==",
-            "cache-control": "no-cache",
-            'Content-Type': 'application/x-www-form-urlencoded'
+            "cache-control": "no-cache"
         }})
         .then((response) => {
             console.log(response)

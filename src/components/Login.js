@@ -2,8 +2,12 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Field , reduxForm} from 'redux-form'
 import {login} from '../actions/loginAction'
-
+import PropTypes from 'prop-types'; 
+import {browserHistory ,withRouter } from 'react-router-dom'
  class Login extends React.Component{
+    static contextTypes = {
+        router: PropTypes.object
+    }
     constructor(props){
         super(props),
         this.state = {
@@ -24,6 +28,9 @@ import {login} from '../actions/loginAction'
         }
         console.log(data)
         this.props.logins(data)
+        this.context.router.history.push('/');
+        
+
     } 
     render(){ 
    
@@ -48,4 +55,4 @@ const mapActiontoDispactch = (dispatch) => {
         }
     }
 }
-export default connect(mapStateToProps,mapActiontoDispactch)(Login)
+export default  connect(mapStateToProps,mapActiontoDispactch)(Login)
